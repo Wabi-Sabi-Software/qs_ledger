@@ -17,14 +17,14 @@ Some initial work has been started on using these data streams for predictive an
 
 * The code is written in Python 3. 
 * Shared and distributed via Jupyter Notebooks. 
-* To get started, we recommend downloading and using the [Anaconda Distribution](https://www.anaconda.com/download/#macos).
-* For installation, setup and usage of individual services, see documentation provided by each integration.  
 * Most services depend on Pandas and NumPy for data manipulation and Matplot and Seaborn for data analysis and visualization. 
-* Each project has a NAME_donwloader and NAME_data_analysis.  
+* To get started, we recommend downloading and using the [Anaconda Distribution](https://www.anaconda.com/download/#macos).
+* For initial installation and setup help, see documentation below. 
+* For setup and usage of individual services, see documentation provided by each integration.  
 
 ### Current Integrations: 
 
-* [Apple Health](https://github.com/markwk/qs_ledger/tree/master/apple_health): fitness and health tracking and data analysis from iPhone or Apple Watch.
+* [Apple Health](https://github.com/markwk/qs_ledger/tree/master/apple_health): fitness and health tracking, data analysis and dashboard from iPhone or Apple Watch (includes example of Elastic Search integration and Kibana Health Dashboard).
 * [AutoSleep](https://github.com/markwk/qs_ledger/tree/master/autosleep/autosleep_data_analysis.ipynb): iOS sleep tracking data analysis of sleep per night and rolling averages. 
 * [Fitbit](https://github.com/markwk/qs_ledger/tree/master/fitbit): fitness and health tracking and analysis of Steps, Sleep, and Heart Rate from a Fitbit wearable.
 * [GoodReads](https://github.com/markwk/qs_ledger/tree/master/goodreads ): book reading tracking and data analysis for GoodReads.
@@ -46,8 +46,39 @@ Some initial work has been started on using these data streams for predictive an
 
 * [Combine and Merge Personal Data into Unified Data Frame](https://github.com/markwk/qs_ledger/blob/master/Example_Combined_Personal_Data.ipynb): This example notebook provides a step-by-step walkthrough about how to combine multiple data points into a unified daily CSV of personal metrics. 
 * [Simple QS Correlation Explorer with Plot.ly and Dash](https://github.com/markwk/qs_ledger/blob/master/example_correlation_explorer_with_plotly.py): This example code uses combined data frame to generate a simple way to view data, visualize correlation and test for linear regression relationship. Requires Dash and Plot.ly. 
+* [Import Apple Health Data into Elastic Search and Create a Dashboard](https://github.com/markwk/qs_ledger/blob/master/apple_health/apple_health_data2elastic.ipynb): This example code shows how to import data from a panda's dataframe into Elastic Search and then how create necessary indexes, objects and finally a working dynamic dashboard. See [Apple Health readme](https://github.com/markwk/qs_ledger/tree/master/apple_health) for specific instructions. 
 
-### Usage Shortcuts
+### How to use this project: Installation and Setup Locally
+
+Until we provide a working version for Google's Collab or other online jupyter notebook setups, we recommend to get started by downloading and using the [Anaconda Distribution](https://www.anaconda.com/download/), which is free and open source. This will give you a local working version of Numpy, Pandas, Jupyter Notebook and other Python Data Science tools. 
+
+After installation, we recommend create and activating a virtual environment using [Anaconda](https://www.geeksforgeeks.org/set-up-virtual-environment-for-python-using-anaconda/) or manually:  
+
+`python3 -m venv ~/.virtualenvs/qs_ledger`
+
+`source ~/.virtualenvs/qs_ledger/bin/activate`
+
+Then clone the current github repo: 
+
+`git clone https://github.com/markwk/qs_ledger.git`
+
+Using your activate virtual environment, install dependencies: 
+
+`pip install -r requirements.txt`
+
+Then navigate into your directory and launch an individual notebook or the full project with jupyter notebook or jupyter lab: 
+
+`jupyter lab`
+
+### Code Organization 
+
+Best practices and organization are still a work-in-progresss, but in general: 
+
+* Each project has a NAME_downloader and NAME_data_analysis. 
+* Some projects include a helper function for data pulling. 
+* Optionally, some projects have useful notebooks for specific use cases, like weekly reviews. 
+
+### Useful Shortcuts
 
 You can use command line to run jupyter notebooks directly and, in the case of papermill, you can pass parameters: 
 
